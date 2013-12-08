@@ -1,0 +1,23 @@
+<metadata>
+	<!--
+  This sample removes the class: android.support.v4.content.AsyncTaskLoader.LoadTask:
+  <remove-node path="/api/package[@name='android.support.v4.content']/class[@name='AsyncTaskLoader.LoadTask']" />
+  
+  This sample removes the method: android.support.v4.content.CursorLoader.loadInBackground:
+  <remove-node path="/api/package[@name='android.support.v4.content']/class[@name='CursorLoader']/method[@name='loadInBackground']" />
+  -->
+
+  <attr path="/api/package[@name='com.google.analytics.tracking.android']" name="managedName">GoogleAnalytics.Tracking</attr>
+  <attr path="/api/package[@name='com.google.analytics.containertag.common']" name="managedName">GoogleAnalytics.ContainerTag.Common</attr>
+  <attr path="/api/package[@name='com.google.analytics.containertag.proto']" name="managedName">GoogleAnalytics.ContainerTag.Proto</attr>
+  <attr path="/api/package[@name='com.google.analytics.midtier.proto.containertag']" name="managedName">GoogleAnalytics.MidTier.Proto.ContainerTag</attr>
+  <attr path="/api/package[@name='com.google.android.gms.analytics.internal']" name="managedName">Android.Gms.Analytics.Internal</attr>
+  <attr path="/api/package[@name='com.google.android.gms.common.util']" name="managedName">Android.Gms.Common.Util</attr>
+  <attr path="/api/package[@name='com.google.tagmanager']" name="managedName">GoogleAnalytics.TagManager</attr>
+  <attr path="/api/package[@name='com.google.tagmanager.proto']" name="managedName">GoogleAnalytics.TagManager.Proto</attr>
+  <attr path="/api/package[@name='com.google.tagmanager.protobuf']" name="managedName">GoogleAnalytics.TagManager.Protobuf</attr>
+
+
+  <remove-node path="/api/package[@name='com.google.tagmanager.protobuf']/class[@name='AbstractMutableMessageLite']/method[@name='getDefaultInstanceForType' and count(parameter)=0]" />
+
+</metadata>
