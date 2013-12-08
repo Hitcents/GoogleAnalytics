@@ -1,7 +1,9 @@
 <metadata>
 
+  <!--rename namespaces-->
   <attr path="/api/package[@name='com.google.analytics.tracking.android']" name="managedName">GoogleAnalytics.Tracking</attr>
 
+  <!--remove namespaces-->
   <remove-node path="/api/package[@name='com.google.analytics.containertag.common']" />
   <remove-node path="/api/package[@name='com.google.analytics.containertag.proto']" />
   <remove-node path="/api/package[@name='com.google.analytics.midtier.proto.containertag']" />
@@ -11,8 +13,15 @@
   <remove-node path="/api/package[@name='com.google.tagmanager.proto']" />
   <remove-node path="/api/package[@name='com.google.tagmanager.protobuf']" />
 
+  <!--compile issues-->
   <attr path="/api/package[@name='com.google.analytics.tracking.android']/class[@name='CampaignTrackingService']" name="extends">mono.android.app.IntentService</attr>
   <attr path="/api/package[@name='com.google.analytics.tracking.android']/class[@name='CampaignTrackingService']/method[@name='onHandleIntent' and count(parameter)=1 and parameter[1][@type='android.content.Intent']]" name="visibility">protected</attr>
   <attr path="/api/package[@name='com.google.analytics.tracking.android']/class[@name='TrackerHandler']" name="visibility">public</attr>
+
+  <!--parameters-->
+  <attr path="/api/package[@name='com.google.analytics.tracking.android']/class[@name='EasyTracker']/method[@name='getInstance']/parameter[@name='p0']" name="name">context</attr>
+  <attr path="/api/package[@name='com.google.analytics.tracking.android']/class[@name='EasyTracker']/method[@name='setResourcePackageName']/parameter[@name='p0']" name="name">packageName</attr>
+  <attr path="/api/package[@name='com.google.analytics.tracking.android']/class[@name='EasyTracker']/method[@name='activityStart']/parameter[@name='p0']" name="name">activity</attr>
+  <attr path="/api/package[@name='com.google.analytics.tracking.android']/class[@name='EasyTracker']/method[@name='activityStop']/parameter[@name='p0']" name="name">activity</attr>
 
 </metadata>
